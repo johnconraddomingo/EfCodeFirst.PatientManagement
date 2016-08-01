@@ -13,8 +13,7 @@ namespace EfCodeFirst.PatientManagement.Data
     public class PatientManagementDatabase : DbContext
     {
         public PatientManagementDatabase() : base("PatientManagementContext")
-        {
-            //Configuration.LazyLoadingEnabled = false;
+        { 
             Configuration.LazyLoadingEnabled = true;
             Configuration.ProxyCreationEnabled = false;
         }
@@ -25,9 +24,7 @@ namespace EfCodeFirst.PatientManagement.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new AppointmentMap());
-            modelBuilder.Configurations.Add(new PatientMap());
-
-
+            modelBuilder.Configurations.Add(new PatientMap()); 
         }
     }
 }

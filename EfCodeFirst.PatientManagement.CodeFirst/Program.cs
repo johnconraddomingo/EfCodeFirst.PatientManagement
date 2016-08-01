@@ -12,10 +12,8 @@ namespace EfCodeFirst.PatientManagement.CodeFirst
     class Program
     {
         private static void CreateDatasource()
-        {
-            // Database.SetInitializer(new CreateDatabaseIfNotExists<PatientManagementDatabase>());
-            Database.SetInitializer(new DropCreateDatabaseAlways<PatientManagementDatabase>());
-
+        { 
+            Database.SetInitializer(new CreateDatabaseIfNotExists<PatientManagementDatabase>()); 
 
             var context = new PatientManagementDatabase();
             context.Patient.Create();
@@ -26,8 +24,7 @@ namespace EfCodeFirst.PatientManagement.CodeFirst
 
         static void Main(string[] args)
         {
-
-            // Database.SetInitializer<PatientManagementDatabase>(null);
+             
 
             // Create
 
